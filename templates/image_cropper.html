@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Image cropper </title>
+	<link rel="icon" 
+      type="image/png" 
+      href="http://example.com/myicon.png">
+</head>
+<body>
+
+<h2>Upload a picture</h2>
+<form action="http://localhost:5000/" method="post" enctype = "multipart/form-data">
+  <input type="file" name="file"> <br>
+  <p> Specify crop ratio: </p>
+  <input type="text" id="cropRatio" name="cropRatio"><br> <br>
+  <input type="submit" value="Submit" > <br><br>
+</form>
+
+<button onclick="displayOutput()"> Crop image </button> <br>
+
+<div id="images" style="display:none">
+<h2>Input</h2>
+<img id="input" alt="image cannot be displayed" width="500" height="333">
+
+<h2>Output</h2>
+<p> After cropping by a factor {{num}} </p>
+<img id="output" alt="image cannot be displayed" width="500" height="333">
+</div>
+
+</body>
+
+<script>
+function displayOutput() {
+  var x = document.getElementById("images");
+  document.getElementById("input").src="../static/inputImage.png"
+  document.getElementById("output").src="../static/outputImage.png"
+  x.style.display = "block";
+}
+</script>
+
+</html>
